@@ -9,6 +9,7 @@ const Middle = () => {
   const [weatherData, setWeatherData] = useState(false);
   const [originalData, setOriginalData] = useState(null); 
 
+
   const search = async (city) => {
     try {
       const response = await fetch(
@@ -46,6 +47,14 @@ const Middle = () => {
       console.log("error: ", error);
     }
   };
+  
+  const getWeatherBg = () => {
+  if (weatherData.currentTemp>=20) return "src/images/sunny.jpg";
+  if (weatherData.currentTemp>10 && weatherData.currentTemp<20) return "src/images/cloudy.png";
+  if (weatherData.currentTemp>0 && weatherData.currentTemp<10) return "src/images/grim.jpg";
+  if (weatherData.currentTemp<=0) return "src/images/Snowy.jpg";
+  return "/images/default.jpg";
+};
 
   const handleTemp = () => {
     if (!weatherData || !originalData) return;
@@ -83,7 +92,7 @@ const Middle = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col text-white text-2xl font-bold m-4 sm:m-6 rounded-2xl h-auto min-h-[500px] w-full max-w-4xl bg-blue-600 mx-auto">
+        <div className="bg-cover bg-center flex flex-col text-white text-2xl font-bold m-4 sm:m-6 rounded-2xl h-auto min-h-[500px] w-full max-w-4xl mx-auto" style={{ backgroundImage: `url(${getWeatherBg()})` }}>
  
           <div className="flex flex-col sm:flex-row justify-center w-full p-4 sm:p-6 lg:p-9 items-center gap-4">
             <form 

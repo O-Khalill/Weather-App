@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react'
 const Header = () => {
   const [currentFact, setCurrentFact] = useState(0);
 
+
+
+  useEffect(()=>{
+    
+  })
   return (
     <>
       <div className='text-center flex flex-row justify-between items-center gap-2 text-white text-sm font-bold bg-gray-600 mx-2 my-1 p-2 rounded-xl'>

@@ -12,16 +12,16 @@ function App() {
 
 
   return (
-  <div className='h-dvh'>
-  
-    <Header />
+<div className="flex flex-col h-screen">
+  <Header />
 
-    <div className='flex-1'>
+
+  <div className="flex-1 overflow-hidden">
     <Middle />
-    </div>
-    
-    <Footer />
-   </div>
+  </div>
+
+  <Footer />
+</div>
 
   )
 }

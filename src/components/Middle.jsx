@@ -91,8 +91,8 @@ const Middle = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full px-4 sm:px-6 lg:px-8">
-        <div className="bg-cover bg-center flex flex-col text-white text-2xl font-bold m-4 sm:m-6 rounded-2xl h-auto min-h-[500px] w-full max-w-4xl mx-auto" style={{ backgroundImage: `url(${getWeatherBg()})` }}>
+      <div className="flex flex-col items-center justify-center align-middle w-full px-4  lg:px-8 h-full overflow-hidden" >
+        <div className="bg-cover bg-center flex flex-col text-white text-2xl font-bold m-4 overflow-scroll  rounded-2xl  min-h-[500px]  w-full max-w-4xl mx-auto" style={{ backgroundImage: `url(${getWeatherBg()})` }}>
  
           <div className="flex flex-col sm:flex-row justify-center w-full p-4 sm:p-6 lg:p-9 items-center gap-4">
             <form 

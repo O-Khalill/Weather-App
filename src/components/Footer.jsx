@@ -28,7 +28,7 @@ const getRandomQuote = () => {
 
 
     
-  <div className="flex items-center justify-center bg-gray-600 text-white mx-2 my-1 p-3 rounded-xl overflow-hidden w-full min-h-[50px]">
+  <div className="flex items-center justify-center bg-gray-600 text-white mx-0 my-1 p-3 rounded-xl overflow-hidden w-full min-h-[50px]">
   <p className="text-center text-xs sm:text-sm lg:text-base font-semibold px-2 break-words">
     {quote || "Loading quote..."}
   </p>

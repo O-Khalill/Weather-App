@@ -12,11 +12,11 @@ function App() {
 
 
   return (
-<div className="flex flex-col h-screen">
+<div className="flex flex-col h-screen m-0 p-2 overflow-hidden justify-center " >
   <Header />
 
 
-  <div className="flex-1 overflow-hidden">
+  <div className="flex-1 overflow-hidden  m-0 p-0  " >
     <Middle />
   </div>
 

@@ -31,7 +31,7 @@ const Header = () => {
  
   return (
     <>
-     <div className="flex items-center bg-gray-600 text-white mx-2 my-1 p-2 rounded-xl w-full overflow-hidden min-h-[50px]">
+     <div className="flex items-center bg-gray-600 text-white mx-0 my-1 p-2 rounded-xl w-full overflow-hidden min-h-[50px]">
 
      
       <div className='bg-[url("./src/images/logo.png")] bg-cover bg-center w-8 h-8 sm:w-10 sm:h-10 lg:w-16 lg:h-16 shrink-0'></div>

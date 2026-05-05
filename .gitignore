@@ -41,7 +41,7 @@ pids
 # environment variables
 .env
 .env.local
-.env.development.local
+.env.development.local 
 .env.test.local
 .env.production.local
 .env.production
@@ -105,3 +105,5 @@ jspm_packages/
 
 # DynamoDB Local files
 .dynamodb/
+
+project-summary.yml

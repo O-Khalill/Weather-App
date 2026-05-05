@@ -4,17 +4,17 @@ import Middle from "./components/Middle.jsx";
 import "./App.css";
 
 function App() {
-     return (
-          <div className="flex flex-col h-screen m-0 p-2 overflow-hidden justify-center ">
-               <Header />
+  return (
+    <div className="flex flex-col h-screen m-0 p-2 overflow-hidden justify-center ">
+      <Header />
 
-               <div className="flex-1 overflow-hidden  m-0 p-0  ">
-                    <Middle />
-               </div>
+      <div className="flex-1 overflow-hidden  m-0 p-0 shadow-2xl ">
+        <Middle />
+      </div>
 
-               <Footer />
-          </div>
-     );
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

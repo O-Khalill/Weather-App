@@ -44,7 +44,7 @@ def get_input():
     )
 
 
-end_time = time.time() + 60  # run for 1 minute
+end_time = time.time() + 60  
 
 while time.time() < end_time:
     city = random.choice(cities)

@@ -7,7 +7,7 @@ const Footer = () => {
  
 
 useEffect(() => {
-    fetch("src/dbs/quotes.json")
+    fetch("public/dbs/quotes.json")
       .then(res => res.json())
       .then(data => {
         setQuotes(data.quotes);
@@ -17,11 +17,11 @@ useEffect(() => {
     },[]);
 
 
-const getRandomQuote = () => {
-    if (quotes.length === 0) return;
-    const randomQuote = Math.floor(Math.random() * quotes.length);
-    setQuote(quotes[randomQuote].text);
-  };
+// const getRandomQuote = () => {
+//     if (quotes.length === 0) return;
+//     const randomQuote = Math.floor(Math.random() * quotes.length);
+//     setQuote(quotes[randomQuote].text);
+//   };
 
   return (
    <>

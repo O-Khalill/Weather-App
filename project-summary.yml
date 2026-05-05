@@ -1,0 +1,99 @@
+project:
+  name: weather-app
+  type: react-single-page-app
+  description: >-
+    A React + Vite weather search app. Users enter a city to fetch current
+    weather from OpenWeather, see a temperature-based background image, toggle
+    Celsius/Fahrenheit, and view random facts/quotes from local JSON.
+  runtime:
+    ui: react 19
+    build: vite (rolldown-vite)
+    styling: tailwindcss v4 via @import in src/App.css
+    notifications: react-hot-toast
+    icons: react-icons
+
+entry_points:
+  app_root: src/main.jsx
+  app_component: src/App.jsx
+
+routes:
+  - path: /
+    description: single-page UI
+
+components:
+  - name: Header
+    file: src/components/Header.jsx
+    purpose: Displays a random fun fact and a logo image.
+    data_sources:
+      - public/dbs/facts.json (funFacts[])
+  - name: Middle
+    file: src/components/Middle.jsx
+    purpose: Weather search, temperature display, icon display, and unit toggle.
+    data_sources:
+      - OpenWeather API (current weather)
+      - public/icons/* (icon map)
+      - src/images/* (backgrounds)
+    behaviors:
+      - Fetches weather by city name using metric units.
+      - Toggles between C and F using stored original values.
+      - Changes background image based on temperature thresholds.
+      - Shows toast error when city is invalid.
+  - name: Footer
+    file: src/components/Footer.jsx
+    purpose: Displays a random motivational quote.
+    data_sources:
+      - public/dbs/quotes.json (quotes[])
+
+data_files:
+  - path: public/dbs/facts.json
+    schema: { funFacts: [{ id: number, text: string }] }
+  - path: public/dbs/quotes.json
+    schema: { quotes: [{ id: number, text: string }] }
+
+assets:
+  backgrounds:
+    - src/images/sunny.jpg
+    - src/images/cloudy.png
+    - src/images/grim.jpg
+    - src/images/Snowy.jpg
+  logo:
+    - src/images/logo.png
+  weather_icons:
+    - public/icons/sun.png
+    - public/icons/moon.png
+    - public/icons/cloud-sun.png
+    - public/icons/cloud-moon.png
+    - public/icons/cloud.png
+    - public/icons/broken-clouds.png
+    - public/icons/rain.png
+    - public/icons/rain-sun.png
+    - public/icons/rain-night.png
+    - public/icons/mist.png
+    - public/icons/snow.png
+    - public/icons/thunder.png
+
+environment:
+  required:
+    - name: VITE_API
+      description: OpenWeather API key used in src/components/Middle.jsx
+
+scripts:
+  dev: vite
+  build: vite build
+  preview: vite preview
+  lint: eslint .
+  test: vitest
+
+tests:
+  - path: src/weather.test.js
+    type: unit (vitest)
+    focus:
+      - Celsius to Fahrenheit conversion
+      - getWeatherBg temperature thresholds
+  - path: test_weather.py
+    type: e2e (selenium)
+    notes: Requires running dev server at http://localhost:5173
+
+notes:
+  - README.md is the default Vite template and does not describe this app yet.
+  - Default icon fallback path in Middle.jsx is /icons/default.png (file not present).

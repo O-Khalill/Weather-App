@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { TbCloudSearch } from "react-icons/tb";
-import {g}
+
 import toast from "react-hot-toast";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 

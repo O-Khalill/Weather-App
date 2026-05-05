@@ -5,7 +5,7 @@ const Header = () => {
   const [fact, setFact] = useState("");
 
   useEffect(() => {
-    fetch("src/dbs/facts.json")
+    fetch("public/dbs/facts.json")
       .then((res) => res.json())
       .then((data) => {
         setFacts(data.funFacts);
@@ -14,11 +14,7 @@ const Header = () => {
       });
   }, []);
 
-  // const getRandomFact = () => {
-  //      if (facts.length === 0) return;
-  //      const randomIndex = Math.floor(Math.random() * facts.length);
-  //      setFact(facts[randomIndex].text);
-  // };
+
 
   return (
     <>
